@@ -6,7 +6,7 @@
     <application
         android:label="untitled10"
         android:name="${applicationName}"
-        android:icon="@mipmap/ic_launcher">
+        android:icon="@mipmap/download">
         <activity
             android:name=".MainActivity"
             android:exported="true"
