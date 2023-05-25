@@ -47,7 +47,6 @@ class MyApp extends StatelessWidget {
         home: data.isAuth()?ProductOverviewScreen():  FutureBuilder(
           future: data.trylogin(),
           builder: (ctx, authResultSnapshot) {
-            print("buldd");
             if(authResultSnapshot.connectionState == ConnectionState.waiting ){
           return SplashScreen();
           }else

@@ -22,8 +22,12 @@ class MainDrawer extends StatelessWidget {
         ,ListTile(title: const Text("Mange Prodcts"),leading: const Icon(Icons.edit),onTap: (){Navigator.of(context).pushReplacementNamed(UserProducts.route);},)
         ,const Divider()
         ,ListTile(title: const Text("logout"),leading: const Icon(Icons.logout),onTap: (){
+          Navigator.of(context).pop();
           Navigator.of(context).pushReplacementNamed('/');
-          Provider.of<Auth>(context,listen: false).logout();},)
+          Provider.of<Auth>(context,listen: false).logout();
+
+
+         },)
 
       ],),
     );

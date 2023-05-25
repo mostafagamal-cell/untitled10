@@ -4,7 +4,7 @@
 
 
     <application
-        android:label="untitled10"
+        android:label="Shop app"
         android:name="${applicationName}"
         android:icon="@mipmap/download">
         <activity

@@ -7,6 +7,7 @@ import 'package:shared_preferences/shared_preferences.dart';
 import 'package:untitled10/model/HTTPEXPCTION.dart';
 
 class Auth with ChangeNotifier {
+
   String? _token="";
   DateTime? _expiryDate=DateTime.now();
   String? _userId="";
@@ -98,8 +99,8 @@ try{
     logoutTimer();
     return true;
   }
-  void logout()
-  {
+  Future<void> logout()
+  async {
     print(_expiryDate?.second);
     _expiryDate=null;
     _userId=null;
@@ -108,6 +109,11 @@ try{
       _auth!.cancel();
       _auth=null;
     }
+    final prefs = await SharedPreferences.getInstance();
+    if (prefs.containsKey('userdata')) {
+      prefs.clear();
+    }
+
     notifyListeners();
 
   }
